@@ -13,7 +13,7 @@ end;
 
 
 local Gui = Library:AddGui({
-	Title = {"Dupe Script", "Update [💰 2x] "},
+	Title = {"Dupe Script", "Update [👾 8-Bit] "},
 	ThemeColor = Color3.fromRGB(148, 0, 211),
 	ToggleKey = Enum.KeyCode.RightShift,
 })
