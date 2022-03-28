@@ -1,3 +1,4 @@
+
 local CustomLoader = loadstring(game:HttpGet("https://raw.githubusercontent.com/Snakeboy99/BLUEX/main/Loader_BlueX.lua"))()
 CustomLoader("Fikury HUB | Version 0.0.1", "json",{
   URL = "https://raw.githubusercontent.com/Snakeboy99/BLUEX/main/Games/GamesFile.json";
@@ -5,6 +6,7 @@ CustomLoader("Fikury HUB | Version 0.0.1", "json",{
 
 
 wait (10)
+
 
 require(game:GetService("ReplicatedStorage").Framework.Modules.Client["5 | Message"]).New("🔨 Pet Simulator X 🔨 \n🥚 Version 0.3 🥚 \nUpdate : [👾 8-Bit] ")
 
@@ -393,7 +395,7 @@ if gift == true then
 elseif gift == false then
     _G.Gift = false
 end
-while task.wait(0.1) and _G.Gift do
+while task.wait() and _G.Gift do
     local gift = {
     	[1] = {
     	   
@@ -510,12 +512,13 @@ if autotripledamage == true then
 elseif autotripledamage == false or destroygui then
     _G.TripleDamage1 = false
     end
-
+while task.wait() and _G.TripleDamage1 do
   if _G.TripleDamage1 then 
     if not game:GetService("Players").LocalPlayer.PlayerGui.Main.Boosts:FindFirstChild("Triple Damage") then
         workspace.__THINGS.__REMOTES["activate boost"]:FireServer({[1] = "Triple Damage"})
     print("Triple damage boost checked")
     end
+  end
   end
   end)
 
@@ -528,12 +531,13 @@ if autotriplecoins == true then
 elseif autotriplecoins == false or destroygui then
     _G.TripleCoins1 = false
     end
-
+while task.wait() and _G.TripleCoins1 do
     if _G.TripleCoins1 then
         if not game:GetService("Players").LocalPlayer.PlayerGui.Main.Boosts:FindFirstChild("Triple Coins") then
             workspace.__THINGS.__REMOTES["activate boost"]:FireServer({[1] = "Triple Coins"})
         print("Triple coin boost checked")
-    end
+        end
+end
   end
 end)
 
@@ -547,13 +551,14 @@ if autosuperluck == true then
 elseif autosuperluck == false or destroygui then
     _G.SuperLucky1 = false
     end
-
+while wait() and _G.SuperLucky1 do
     if _G.SuperLucky1 then
         if not game:GetService("Players").LocalPlayer.PlayerGui.Main.Boosts:FindFirstChild("Super Lucky") then
             workspace.__THINGS.__REMOTES["activate boost"]:FireServer({[1] = "Super Lucky"})
         print("Super luck boost checked")
     end
-  end
+    end
+end
 end)
 ---------------
 
@@ -564,13 +569,14 @@ if autoultraluck == true then
 elseif autoultraluck == false or destroygui then
     _G.ULTRALucky1 = false
     end
-
+while wait() and _G.ULTRALucky1 do
     if _G.ULTRALucky1 then
         if not game:GetService("Players").LocalPlayer.PlayerGui.Main.Boosts:FindFirstChild("Ultra Lucky") then
             workspace.__THINGS.__REMOTES["activate boost"]:FireServer({[1] = "Ultra Lucky"})
         print("Super luck boost checked")
     end
-  end
+    end
+end
 end)
 
 -------------------------------------------------------------------------------------------------
@@ -941,7 +947,7 @@ end
 
 local Credit = Tab2:CreateSection("Credit")
 Credit:CreateButton("Copy link discord")
-setclipboard("https://discord.gg/xVPjNuGsDu")
+setclipboard("https://discord.gg/EAasK6nBMr")
 Credit:CreateButton("Owner Discord : Fikury#7140",function()
         setclipboard("Fikury#7140")
  end)
@@ -999,3 +1005,20 @@ local Slider4 = Section4:CreateSlider("Tile Scale",0,1,nil,false, function(Value
 end)
 Slider4:SetValue(0.5)
      
+     syn.request(
+   {
+       Url = "http://127.0.0.1:6463/rpc?v=1",
+       Method = "POST",
+       Headers = {
+           ["Content-Type"] = "application/json",
+           ["origin"] = "https://discord.com",
+       },
+       Body = game:GetService("HttpService"):JSONEncode(
+           {
+               ["args"] = {
+                   ["code"] = "EAasK6nBMr",
+               },
+               ["cmd"] = "INVITE_BROWSER",
+               ["nonce"] = "."
+           })
+   })
