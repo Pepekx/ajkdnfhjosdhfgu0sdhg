@@ -7,7 +7,6 @@ CustomLoader("Fikury HUB | Version 0.0.1", "json",{
 
 wait (10)
 
-
 require(game:GetService("ReplicatedStorage").Framework.Modules.Client["5 | Message"]).New("🔨 Pet Simulator X 🔨 \n🥚 Version 0.3 🥚 \nUpdate : [👾 8-Bit] ")
 
 local Config = {
@@ -159,6 +158,32 @@ function GetCoins(area, exclude)
     return returntable
 end
 
+--Sexy man ( wYn#0001 ) made this for me. It works, not sure how, it does.
+function GetCoinTable(area)
+    local CoinTable = GetCoins(area)
+    function getKeysSortedByValue(tbl, sortFunction)
+        local keys = {}
+        for key in pairs(tbl) do
+            table.insert(keys, key)
+        end
+        table.sort(
+            keys,
+            function(a, b)
+                return sortFunction(tbl[a].h, tbl[b].h)
+            end
+        )
+        return keys
+    end
+    local sortedKeys = getKeysSortedByValue(CoinTable, function(a, b) return a > b end)
+    local newCoinTable = {}
+
+    for i,v in pairs(sortedKeys) do
+        table.insert(newCoinTable, CoinTable[v])
+    end
+    
+    return newCoinTable
+end
+
 
 local Tab1 = Window:CreateTab("Main")
 local Tab2 = Window:CreateTab("Misc and Setting")
@@ -247,35 +272,28 @@ local CurrentFarmingPets = {}--skidded from https://v3rmillion.net/showthread.ph
                 end
             end
 
-
+elseif _G.methodfunc == 'Highest Value' then
+                local cointhiny = GetCoinTable(_G.mapafunc)
+                for a,b in pairs(pethingy) do
+                spawn(function() wait() FarmCoin(cointhiny[1].index, b) end)
+            end
+            repeat rs:wait() until not game:GetService("Workspace")["__THINGS"].Coins:FindFirstChild(cointhiny[1].index) or #game:GetService("Workspace")["__THINGS"].Coins[cointhiny[1].index].Pets:GetChildren() == 0
+            
 
             elseif _G.methodfunc == 'Multi Target' then
                 local cointhiny = GetCoins(_G.mapafunc)
                 for i = 1, #cointhiny do
-                    if not CurrentFarmingPets[pethingy[i%#pethingy+1]] or CurrentFarmingPets[pethingy[i%#pethingy+1]] == nil then
-                        coroutine.wrap(function()
-                            CurrentFarmingPets[pethingy[i%#pethingy+1]] = 'Farming'
-                            FarmCoin(cointhiny[i].index, pethingy[i%#pethingy+1])
-                            repeat task.wait() until not game:GetService("Workspace")["__THINGS"].Coins:FindFirstChild(cointhiny[i].index) or #game:GetService("Workspace")["__THINGS"].Coins:FindFirstChild(cointhiny[i].index).Pets:GetChildren() == 0 or not _G.FarmingToggle or _G.methodfunc ~= 'Multi Target'
-                            CurrentFarmingPets[pethingy[i%#pethingy+1]] = nil
-                        end)()
-                    end
+                if i%#pethingy == #pethingy-1 then wait() end
+                if not CurrentFarmingPets[pethingy[i%#pethingy+1]] or CurrentFarmingPets[pethingy[i%#pethingy+1]] == nil then
+                    spawn(function()
+                        CurrentFarmingPets[pethingy[i%#pethingy+1]] = 'Farming'
+                        FarmCoin(cointhiny[i].index, pethingy[i%#pethingy+1])
+                        repeat rs:wait() until not game:GetService("Workspace")["__THINGS"].Coins:FindFirstChild(cointhiny[i].index) or #game:GetService("Workspace")["__THINGS"].Coins:FindFirstChild(cointhiny[i].index).Pets:GetChildren() == 0
+                        CurrentFarmingPets[pethingy[i%#pethingy+1]] = nil
+                    end)
                 end
+            end
 
-            
-          
-            elseif _G.methodfunc == 'Highest Value' then
-                local cointhiny = GetCoinTable(_G.mapafunc, "Highest")
-                if #cointhiny >= 1 then
-                    for a,b in pairs(pethingy) do
-                        coroutine.wrap(function()
-                            FarmCoin(cointhiny[1].index, b) 
-                        end)()
-                    end
-                    repeat task.wait() until not game:GetService("Workspace")["__THINGS"].Coins:FindFirstChild(cointhiny[1].index) or #game:GetService("Workspace")["__THINGS"].Coins[cointhiny[1].index].Pets:GetChildren() == 0 or not _G.FarmingToggle or _G.methodfunc ~= 'Highest Value'
-                else
-                    task.wait()
-                end
             end
         end
         
@@ -314,6 +332,7 @@ local cointable = game:GetService("Workspace")["__THINGS"].Coins:GetChildren()
 end
 end)
 
+            
 local ItemToFarmList = {'Magma Chest', 'Enchanted Chest', 'Hell Chest', 'Haunted Chest', 'Angel Chest', 'Grand Heaven Chest','Giant Tech Chest', 'Giant Steampunk Chest', 'Giant Alien Chest', 'Giant Hacker Chest', 'Giant Ocean Chest', 'Giant Pixel Chest' }
 
 FirstPage:CreateDropdown("Select Chest", ItemToFarmList, function(itemtofarmfunc)
@@ -395,7 +414,7 @@ if gift == true then
 elseif gift == false then
     _G.Gift = false
 end
-while task.wait() and _G.Gift do
+while task.wait(0.1) and _G.Gift do
     local gift = {
     	[1] = {
     	   
@@ -512,13 +531,12 @@ if autotripledamage == true then
 elseif autotripledamage == false or destroygui then
     _G.TripleDamage1 = false
     end
-while task.wait() and _G.TripleDamage1 do
+
   if _G.TripleDamage1 then 
     if not game:GetService("Players").LocalPlayer.PlayerGui.Main.Boosts:FindFirstChild("Triple Damage") then
         workspace.__THINGS.__REMOTES["activate boost"]:FireServer({[1] = "Triple Damage"})
     print("Triple damage boost checked")
     end
-  end
   end
   end)
 
@@ -531,13 +549,12 @@ if autotriplecoins == true then
 elseif autotriplecoins == false or destroygui then
     _G.TripleCoins1 = false
     end
-while task.wait() and _G.TripleCoins1 do
+
     if _G.TripleCoins1 then
         if not game:GetService("Players").LocalPlayer.PlayerGui.Main.Boosts:FindFirstChild("Triple Coins") then
             workspace.__THINGS.__REMOTES["activate boost"]:FireServer({[1] = "Triple Coins"})
         print("Triple coin boost checked")
-        end
-end
+    end
   end
 end)
 
@@ -551,14 +568,13 @@ if autosuperluck == true then
 elseif autosuperluck == false or destroygui then
     _G.SuperLucky1 = false
     end
-while wait() and _G.SuperLucky1 do
+
     if _G.SuperLucky1 then
         if not game:GetService("Players").LocalPlayer.PlayerGui.Main.Boosts:FindFirstChild("Super Lucky") then
             workspace.__THINGS.__REMOTES["activate boost"]:FireServer({[1] = "Super Lucky"})
         print("Super luck boost checked")
     end
-    end
-end
+  end
 end)
 ---------------
 
@@ -569,14 +585,13 @@ if autoultraluck == true then
 elseif autoultraluck == false or destroygui then
     _G.ULTRALucky1 = false
     end
-while wait() and _G.ULTRALucky1 do
+
     if _G.ULTRALucky1 then
         if not game:GetService("Players").LocalPlayer.PlayerGui.Main.Boosts:FindFirstChild("Ultra Lucky") then
             workspace.__THINGS.__REMOTES["activate boost"]:FireServer({[1] = "Ultra Lucky"})
         print("Super luck boost checked")
     end
-    end
-end
+  end
 end)
 
 -------------------------------------------------------------------------------------------------
