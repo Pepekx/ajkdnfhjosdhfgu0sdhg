@@ -47,6 +47,6 @@ local Settings = {
         end
         
 local CustomLoader = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pepekx/QwontolFY/main/loader.lua"))()
-CustomLoader("Fikury HUB | Loader", "json",{
+CustomLoader("THUNDER Z | Loader", "json",{
   URL = "https://raw.githubusercontent.com/Pepekx/QwontolFY/main/Fikury.json";
 })
