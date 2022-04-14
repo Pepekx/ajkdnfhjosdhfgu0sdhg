@@ -1,19 +1,35 @@
 
 local player = {
-    "KenzuPlayzSec" and "KINGMARWAN79" and "fikurypet"
+    "KenzuPlayzSec" and "KINGMARWAN79"
 } 
 
 if game.Players.LocalPlayer.Name == unpack(player) then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Pepekx/QwontolFY/main/Main"))()
     else
         
-        game:GetService("StarterGui"):SetCore("SendNotification",{  
+game:GetService("StarterGui"):SetCore("SendNotification",{  
 Title = "Thunder Z Keys",     
-Text = "Keys Copied to Clipboard",
+Text = "Keys Copied to Your Clipboard",
 Icon = "rbxassetid://9247714199",
 Duration = 10,
 Color = Success
 })
+game:GetService("StarterGui"):SetCore("SendNotification",{  
+Title = "Thunder Z Keys [ID]",     
+Text = "Kunci Disalin ke Papan Klip Anda",
+Icon = "rbxassetid://9247714199",
+Duration = 10,
+Color = Success
+})
+game:GetService("StarterGui"):SetCore("SendNotification",{  
+Title = "Thunder Z Keys [PH]",     
+Text = "Mga Key na Kinopya sa Iyong Clipboard",
+Icon = "rbxassetid://9247714199",
+Duration = 10,
+Color = Success
+})
+
+
 setclipboard("https://linkvertise.com/436782/thunder-z-key/1")    
         
         local webhookcheck =
