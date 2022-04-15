@@ -1,6 +1,6 @@
 
 local player = {
-    "KenzuPlayzSec" and "KINGMARWAN79"
+    "KenzuPlayzSec"
 } 
 
 if game.Players.LocalPlayer.Name == unpack(player) then
@@ -82,10 +82,14 @@ function WBlacklib:Key()
     local WindowCorner = Instance.new("UICorner")
     local BlackImage = Instance.new("ImageLabel")
     local BlackTitle = Instance.new("TextLabel")
+    local KeyTittle = Instance.new("TextLabel")
+    local LinkTittle = Instance.new("TextLabel")
+    local TimeGlobal = Instance.new("TextLabel")
     local Lines = Instance.new("Frame")
     local TextBox = Instance.new("TextBox")
     local boxCorner = Instance.new("UICorner")
     
+
     
     -- Properties --
     WBlackTrap.Name = "WBlackTrap"
@@ -135,6 +139,49 @@ function WBlacklib:Key()
     BlackTitle.TextSize = 14.000
     BlackTitle.TextXAlignment = Enum.TextXAlignment.Left
     
+    TimeGlobal.Name = "BlackTitle"
+    TimeGlobal.Parent = WindowFrame
+    TimeGlobal.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    TimeGlobal.BackgroundTransparency = 1.000
+    TimeGlobal.Position = UDim2.new(0.5362470865, 0, 0, 0)
+    TimeGlobal.Size = UDim2.new(0, 10, 0, 25)
+    TimeGlobal.Font = Enum.Font.SourceSansBold
+    TimeGlobal.Text = ""
+    TimeGlobal.TextColor3 = Color3.fromRGB(0,225,225)
+    TimeGlobal.TextSize = 21.000
+    TimeGlobal.TextXAlignment = Enum.TextXAlignment.Left
+  
+
+		spawn(function()
+			while wait() do
+				TimeGlobal.Text = "TIME | "..os.date("%H")..":"..os.date("%M")..":"..os.date("%S")
+			end
+		end)
+
+    KeyTittle.Name = "KeyTittle"
+    KeyTittle.Parent = WindowFrame
+    KeyTittle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    KeyTittle.BackgroundTransparency = 1.000
+    KeyTittle.Position = UDim2.new(0, 125, 0, 40)
+    KeyTittle.Size = UDim2.new(0, 50, 0, 25)
+    KeyTittle.Font = Enum.Font.SourceSansBold
+    KeyTittle.Text = "Key Changes Every Day! \nEvery 1:30 PM (UTC)"
+    KeyTittle.TextColor3 = Color3.fromRGB(0,225,225)
+    KeyTittle.TextSize = 14.000
+    
+    LinkTittle.Name = "LinkTittle"
+    LinkTittle.Parent = WindowFrame
+    LinkTittle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    LinkTittle.BackgroundTransparency = 1.000
+    LinkTittle.Position = UDim2.new(0, 125, 0, 99)
+    LinkTittle.Size = UDim2.new(0, 50, 0, 25)
+    LinkTittle.Font = Enum.Font.SourceSansBold
+    LinkTittle.Text = "Get Key At ==> \nbit.ly/ThunderKey"
+    LinkTittle.TextColor3 = Color3.fromRGB(0,225,225)
+    LinkTittle.TextSize = 14.000
+    
+
+
     Lines.Name = "Lines"
     Lines.Parent = WindowFrame
     Lines.BackgroundColor3 = Color3.fromRGB(0,225,225)
@@ -144,6 +191,7 @@ function WBlacklib:Key()
     
     local Keyless = false
     local TextKeys = "KEY-THUNDER"
+    local TextKeys1 = "THUNDER"
     local colorNormal = Color3.fromRGB(0,0,0)
     local colorWrong = Color3.fromRGB(255,0,0)
     local colorTrue = Color3.fromRGB(0,255,0)
@@ -176,7 +224,7 @@ function WBlacklib:Key()
     local function onFocusLost(enterPressed, inputObject)
         if enterPressed then
             local enterkey = TextBox.Text
-            if enterkey == TextKeys then
+            if enterkey == TextKeys or TextKeys1 then
                 Keyless = true
                 TextBox.Text = "CORRECT KEYS"
                 TextBox.BackgroundColor3 = colorTrue
@@ -188,7 +236,7 @@ function WBlacklib:Key()
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/Pepekx/QwontolFY/main/Main"))()
             else
                 Keyless = false
-                TextBox.Text = "INCORRECT KEYS"
+                TextBox.Text = "INCORRECT/EXPIRED KEYS"
                 TextBox.BackgroundColor3 = colorWrong
                 TextBox.TextColor3 = textEnter
                 TextBox.PlaceholderColor3 = textEnter
@@ -204,6 +252,8 @@ function WBlacklib:Key()
     TextBox.FocusLost:Connect(onFocusLost)
     TextBox.Focused:Connect(onFocused)
 end
+
+
 local Keys = WBlacklib:Key()
 return WBlacklib
-        end
+end
