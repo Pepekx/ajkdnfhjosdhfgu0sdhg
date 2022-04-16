@@ -165,7 +165,7 @@ function WBlacklib:Key()
     KeyTittle.Position = UDim2.new(0, 125, 0, 40)
     KeyTittle.Size = UDim2.new(0, 50, 0, 25)
     KeyTittle.Font = Enum.Font.SourceSansBold
-    KeyTittle.Text = "Key Changes Every Day! \nEvery 1:30 PM (UTC)"
+    KeyTittle.Text = "Key Changes Every Day! \nEvery 1:30 AM (UTC)"
     KeyTittle.TextColor3 = Color3.fromRGB(0,225,225)
     KeyTittle.TextSize = 14.000
     
