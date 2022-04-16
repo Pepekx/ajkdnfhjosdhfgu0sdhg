@@ -190,8 +190,7 @@ function WBlacklib:Key()
     Lines.Size = UDim2.new(0,290,0,1)
     
     local Keyless = false
-    local TextKeys = "KEY-THUNDER"
-    local TextKeys1 = "THUNDER"
+    local TextKeys = "KEY-APEX"
     local colorNormal = Color3.fromRGB(0,0,0)
     local colorWrong = Color3.fromRGB(255,0,0)
     local colorTrue = Color3.fromRGB(0,255,0)
@@ -224,7 +223,7 @@ function WBlacklib:Key()
     local function onFocusLost(enterPressed, inputObject)
         if enterPressed then
             local enterkey = TextBox.Text
-            if enterkey == TextKeys or TextKeys1 then
+            if enterkey == TextKeys then
                 Keyless = true
                 TextBox.Text = "CORRECT KEYS"
                 TextBox.BackgroundColor3 = colorTrue
