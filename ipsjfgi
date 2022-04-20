@@ -190,7 +190,7 @@ function WBlacklib:Key()
     Lines.Size = UDim2.new(0,290,0,1)
     
     local Keyless = false
-    local TextKeys = "KEY-BLOX"
+    local TextKeys = "KEY-SEA"
     local colorNormal = Color3.fromRGB(0,0,0)
     local colorWrong = Color3.fromRGB(255,0,0)
     local colorTrue = Color3.fromRGB(0,255,0)
