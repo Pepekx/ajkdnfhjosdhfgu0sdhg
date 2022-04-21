@@ -422,7 +422,7 @@ UICorner_36.Parent = Frame_2
 local scriptEnabled = false
 local isKeyValid = false
 
-local key = "KEY-SEA"
+local key = "KEY-MON"
 
 local plr = game.Players.LocalPlayer
 
