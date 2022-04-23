@@ -230,7 +230,7 @@ Confirm.Selected = true
 Confirm.Font = Enum.Font.SourceSansBold
 Confirm.Text = "Confirm"
 Confirm.TextColor3 = Color3.fromRGB(255, 255, 255)
-Confirm.TextSize = 28.000
+Confirm.TextSize = 18.000
 Confirm.TextWrapped = true
 
 UICorner_26.Parent = Confirm
