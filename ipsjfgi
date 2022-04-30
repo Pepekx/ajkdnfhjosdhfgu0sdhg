@@ -20,7 +20,7 @@ Duration = 10,
 Color = Success
 })
 
-setclipboard("https://linkvertise.com/436782/thunder-z-key/1")
+setclipboard("https://link-center.net/436782/thunder-z-key")
 -- Instances:
 
 local UI = Instance.new("ScreenGui")
