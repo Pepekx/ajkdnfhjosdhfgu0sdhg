@@ -1,1 +1,8 @@
+game:GetService("StarterGui"):SetCore("SendNotification",{  
+Title = "THUNDER Z",     
+Text = "NO KEY FOR 2 DAYS",
+Icon = "rbxassetid://9254918057",
+Duration = 10,
+Color = Success
+})
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Pepekx/QwontolFY/main/Main"))()
