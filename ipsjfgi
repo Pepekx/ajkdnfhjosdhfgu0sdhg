@@ -438,7 +438,7 @@ UICorner_36.Parent = Frame_2
 local scriptEnabled = false
 local isKeyValid = false
 
-local key = "KEY-NEW"
+local key = "KEY-ZORO"
 
 local plr = game.Players.LocalPlayer
 
