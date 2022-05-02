@@ -1,8 +1,11 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Pepekx/QwontolFY/main/Main"))()
 game:GetService("StarterGui"):SetCore("SendNotification",{  
 Title = "THUNDER Z",     
 Text = "NO KEY FOR 2 DAYS",
 Icon = "rbxassetid://9254918057",
 Duration = 10,
 Color = Success
+})
+local CustomLoader = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pepekx/QwontolFY/main/loader.lua"))()
+local SET_UP = CustomLoader("Thunder Z | Loader", "json",{
+   URL = "https://raw.githubusercontent.com/Pepekx/QwontolFY/main/Fikury.json";
 })
