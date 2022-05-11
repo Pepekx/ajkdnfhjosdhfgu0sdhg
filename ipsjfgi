@@ -446,7 +446,7 @@ UICorner_36.Parent = Frame_2
 local scriptEnabled = false
 local isKeyValid = false
 
-local key = "KEY-BLOX"
+local key = "KEY-THUNDER"
 
 local plr = game.Players.LocalPlayer
 
