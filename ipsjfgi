@@ -2,7 +2,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Pepekx/QwontolFY/main
 
 game:GetService("StarterGui"):SetCore("SendNotification",{  
 Title = "Thunder Z",     
-Text = "No KEY Until Next Month!",
+Text = "No KEY For Now!",
 Icon = "rbxassetid://9247714199",
 Duration = 10,
 Color = Success
